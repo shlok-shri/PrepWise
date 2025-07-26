@@ -2,7 +2,6 @@
 
 import { auth, db } from "@/firebase/admin";
 import { cookies } from "next/headers";
-import { success } from "zod";
 
 export async function signUp (params : SignUpParams) {
     const {uid, name, email} = params;
@@ -121,3 +120,4 @@ export async function isAuthenticated() {
 
     return !!user;
 }
+

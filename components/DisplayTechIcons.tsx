@@ -12,7 +12,10 @@ const DisplayTechIcons = ({ techstack }: TechIconProps) => {
   const [techIcons, setTechIcons] = useState<{ tech: string; url: string }[]>([]);
 
   useEffect(() => {
-    getTechLogos(techstack).then(setTechIcons);
+    console.log('Techstack in DisplayTechIcons:', techstack);
+    if (techstack && techstack.length > 0) {
+      getTechLogos(techstack).then(setTechIcons);
+    }
   }, [techstack]);
 
   return (
